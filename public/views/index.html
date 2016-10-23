@@ -2,34 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  
+    <script src="venders/angular/angular.min.js"></script>
+    <script src="venders/angular-route/angular-route.min.js"></script>
     <script src="scripts/module.js" charset="utf-8"></script>
     <script src="scripts/main.controller.js"></script>
     <script src="scripts/gif.service.js"></script>
+    <script src="scripts/gif.config.js"></script>
     <link rel="stylesheet" href="venders/bootstrap.min.css" />
+    <base href="/" />
     <title></title>
   </head>
   <body ng-app="giphyApp" ng-controller="MainController as main">
 
-<div id="form">
-
-<form >
-<input type="text" name="q" ng-model="main.searchPhrase.q"/>
-<button type="submit" ng-click="main.getSearch()">Search</button>
-</form>
-<button ng-click="main.getRandom()" class="btn btn-primary">Random</button>
+<div class="container">
+  <ng-view></ng-view>
 </div>
-
-<div id="random">
-  <img ng-src="{{ main.gifs.image_url }}" />
-</div>
-
-<ul>
-  <li ng-repeat="gif in main.gifsArray" class="list-item">
-    <img ng-src="{{ gif.images.original.url }}" />
-  </li>
-</ul>
-
 
 
 
