@@ -57,4 +57,11 @@ function MainController(gifapi) {
       });
     };
 
+  main.updateFavorite = function (index) {
+    gifapi.updateFavorite(main.gifsArray[index].id, main.gifsArray[index].url, main.notes).then(function (list) {
+      main.gifsArray = list;
+      main.notes = null;
+    });
+  };
+
 };

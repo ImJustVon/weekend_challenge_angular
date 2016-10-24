@@ -56,4 +56,13 @@ function GifAPIService($http) {
         });
   };
 
+  this.updateFavorite = function (id, url, notes) {
+    $http.put('/favorites', { id: id, url: url, notes: notes });
+    return $http.get('favorites/list')
+         .then(function (response) {
+          console.log(response.data);
+          return response.data;
+        });
+  };
+
 }

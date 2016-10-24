@@ -1,5 +1,5 @@
-<div ng-controller="MainController as main">
-  <a href="/favorite"><h2>Favorites <span data-ng-init="main.getCount()">{{main.count}}</span></h2></a>
+
+<h2>Favorites <span data-ng-init="main.getCount()">{{main.count}}</span></h2>
 <form>
 <input type="text" name="q" ng-model="main.searchPhrase.q"/>
 <button type="submit" ng-click="main.getSearch()">Search</button>
@@ -8,7 +8,7 @@
 
 
 <ul>
-  <li ng-repeat="gif in main.gifsArray" class="list-item">
+  <li ng-repeat="gif in main.gifsArray" class="list-item col-md-4">
     <img ng-src="{{ gif.images.original.url }}" />
     <img ng-src="{{ gif.image_original_url }}" />
     <form>
@@ -17,4 +17,3 @@
     </form>
   </li>
 </ul>
-</div>
