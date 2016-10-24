@@ -9,6 +9,10 @@ function MainController(gifapi) {
   main.count = 0;
   main.notes = '';
 
+  main.clear = function () {
+    main.gifsArray = [];
+  };
+
   main.getRandom = function () {
     gifapi.getRandom().then(function (gif) {
       console.log(gif);

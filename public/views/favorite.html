@@ -1,17 +1,16 @@
-<div class="container" ng-controller="FavoritesController as fav">
-<div data-ng-init="fav.getFavorites()">
-  <h1 class="text-center">Favorites</h1>
+<div data-ng-init="main.getFavorites()">
+  <h1 class="text-">Favorites</h1>
   <ul class="list-group list-inline">
-    <li ng-repeat="gif in fav.gifsArray track by $index" class="list-group-item">
+    <li ng-repeat="gif in main.gifsArray track by $index" class="list-group-item">
       <img class="image-responsive center" ng-src="{{ gif.url }}" />
       <p class="text-center">
         {{ gif.notes }}
       </p>
 <form>
-  <input type="text" value="{{gif.notes}}" ng-model="fav.notes"/>
-  <button type="submit" ng-click="fav.updateFavorite($index)">Update</button>
+  <input type="text" value="{{gif.notes}}" ng-model="main.notes"/>
+  <button type="submit" ng-click="main.updateFavorite($index)">Update</button>
 </form>
-<button ng-click="fav.deleteFavorite($index)">Delete</button>
+<button ng-click="main.deleteFavorite($index)">Delete</button>
     </li>
   </ul>
 </div>
