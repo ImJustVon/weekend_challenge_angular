@@ -1,0 +1,12 @@
+<div data-ng-init="main.getFavorites()">
+  <ul>
+    <li ng-repeat="gif in main.gifsArray track by $index" class="list-item">
+      <img ng-src="{{ gif.url }}" />
+<form>
+  <input type="text" value="{{gif.notes}}" />
+  <button type="submit" ng-click="main.updateFavorite">Update</button>
+</form>
+<button ng-click="main.deleteFavorite($index)">Delete</button>
+    </li>
+  </ul>
+</div>

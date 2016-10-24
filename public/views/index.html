@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="giphyApp">
   <head>
     <meta charset="utf-8">
-  
+
     <script src="venders/angular/angular.min.js"></script>
     <script src="venders/angular-route/angular-route.min.js"></script>
     <script src="scripts/module.js" charset="utf-8"></script>
@@ -11,18 +11,12 @@
     <script src="scripts/gif.config.js"></script>
     <link rel="stylesheet" href="venders/bootstrap.min.css" />
     <base href="/" />
-    <title></title>
+    <title>Weekend Challenge</title>
   </head>
-  <body ng-app="giphyApp" ng-controller="MainController as main">
+  <body>
 
-<div class="container">
+<div class="container" ng-controller="MainController as main">
   <ng-view></ng-view>
 </div>
-
-
-
-
-
-
   </body>
 </html>

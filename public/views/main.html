@@ -1,17 +1,20 @@
-<div id="form">
-<form >
+<div ng-controller="MainController as main">
+  <a href="/favorite"><h2>Favorites <span data-ng-init="main.getCount()">{{main.count}}</span></h2></a>
+<form>
 <input type="text" name="q" ng-model="main.searchPhrase.q"/>
 <button type="submit" ng-click="main.getSearch()">Search</button>
 </form>
 <button ng-click="main.getRandom()" class="btn btn-primary">Random</button>
-</div>
 
-<div id="random">
-  <img ng-src="{{ main.gifs.image_url }}" />
-</div>
 
 <ul>
   <li ng-repeat="gif in main.gifsArray" class="list-item">
     <img ng-src="{{ gif.images.original.url }}" />
+    <img ng-src="{{ gif.image_original_url }}" />
+    <form>
+      <input type="text-area" name="notes" ng-model="main.notes"/>
+      <button type="submit" ng-click="main.postFavorite($index)">Favorite</button>
+    </form>
   </li>
 </ul>
+</div>
